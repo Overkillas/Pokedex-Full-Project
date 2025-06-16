@@ -1,0 +1,14 @@
+services:
+  nestjs:
+    build:
+      context: ./Pokedex-back-end
+    ports:
+      - "3000:3000"
+    depends_on:
+      - flask
+
+  flask:
+    build:
+      context: ./classification_model
+    ports:
+      - "5000:5000"
